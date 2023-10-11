@@ -1,0 +1,5 @@
+----------Executing Pipeline----------
+
+OUTCOME:
+Air Quality over the next 4 days in Houston is expected to be GOOD
+----------Exiting pipeline.py----------

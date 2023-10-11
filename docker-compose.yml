@@ -1,0 +1,20 @@
+# Start using: docker-compose up -d
+# Stop using: docker-compose down
+version: "2.4"
+services:
+  db:
+    image: datajoint/mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=simple
+    ports:
+      - "3306:3306"
+    volumes:
+      ## persist data across docker-compose up/down
+      - ./data:/var/lib/mysql
+  pythonapp:
+    build: ./python
+    depends_on:
+      db:
+        condition: service_healthy
+    # Sleep added and intentionally left in to mimmick active service instead of just py script
+    command: sh -c "python3 pipeline.py; sleep infinity & wait"
