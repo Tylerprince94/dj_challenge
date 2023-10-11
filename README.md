@@ -13,7 +13,7 @@ Services:
 pythonapp script:
 
 The script is a data pipeline meeting all requirements to the DJ coding challenge. This 
-pipeline leverages the requests library to grab publically available information on pollution 
+pipeline leverages the requests library to grab publicly available information on pollution 
 forecasts in the Houston area, inserts this data to the db using pymysql, reads this data out 
 of the db, calculates the averaged forecast over the next four days using pandas, saves that
 result into a different table, and then displays the result.
